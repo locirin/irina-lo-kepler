@@ -1,0 +1,84 @@
+body {
+    background-color:#F5F5F5; /* minimalistic soft gray */
+    color: #1E1E1E; /*  charcoal text */
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2E4057; /* deep blue*/
+}
+
+
+nav {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav a { /* cleanup navigation links */
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #1E1E1E;
+}
+
+section {
+    margin: 2rem auto;
+    max-width: 800px;
+    padding: 0rem 1rem;
+}
+
+p {
+    color: #4C5C68;  /* slate blue color accent for paragraph */
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+ul { 
+    list-style: disc;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: #1E1E1E;
+}
+
+#Experience li {
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+#Connect a:hover {
+    text-decoration: underline;
+  }
+
+#Connect a {
+    color: #4C5C68;
+    font-weight: 500;
+    display: inline-flex; 
+    align-items: center; 
+    gap: 0.5rem;
+}
