@@ -3,7 +3,8 @@ body {
     color: #1E1E1E; /*  charcoal text */
     font-family: Roboto, Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
+    padding: 80px 0 0;
 }
 
 h1, h2 {
@@ -27,12 +28,20 @@ h2 {
 nav {
     text-align: center;
     margin-bottom: 2rem;
+    position: fixed; /* it sticks to the top */
+    top: 0; 
+    width: 100%;
+    background-color: white; /* ensure it doesn't become transparent over content */
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Optional. Subtle drop shadow */   
 }
 
 nav a { /* cleanup navigation links */
     margin: 0 1rem;
     text-decoration: none;
     color: #1E1E1E;
+    font-weight: bold; /* Optional emphasis */
 }
 
 section {
@@ -63,15 +72,52 @@ a {
     color: #1E1E1E;
 }
 
-#Experience li {
+/* #Experience li {
     background-color: #fff;
     padding: 1rem;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     margin-bottom: 1rem;
     border-radius: 8px;
+} */
+
+.experience-item { /* Replacing the old css with the new clean card look */
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    border-radius: 8px;
 }
 
-#Connect a:hover {
+.experience-header {
+    display: flex; /* Flexbox is on */
+    justify-content: space-between; /* Text alignment: title left, dates right */
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.job-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.job-dates {
+    font-style: italic;
+    color: #555;
+}
+
+.job-description {
+    margin-top: 0.5rem;
+    line-height: 1.5;
+    /* text-align: left; old */
+    text-align: justify; /* optimizing the text even spreading */
+    width: 100%; /* filling parent's full width */
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: auto;
+}
+
+
+/* #Connect a:hover {
     text-decoration: underline;
   }
 
@@ -81,4 +127,32 @@ a {
     display: inline-flex; 
     align-items: center; 
     gap: 0.5rem;
-}
+} */
+/* Replacing the old css with the new clean card look */
+/* Flex */
+
+.connect-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* links style */
+  .connect-links a {
+    text-decoration: none;
+    color: #1E1E1E;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  /* tooltip on hovering */
+  .connect-links a:hover {
+    background-color: #e0e0e0;
+  }
+  
