@@ -1,3 +1,6 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~ Base Layout ~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 body {
     background-color:#F5F5F5; /* minimalistic soft gray */
     color: #1E1E1E; /*  charcoal text */
@@ -13,7 +16,7 @@ h1, h2 {
 }
 
 /* Week 10: Media query style changes to 3 elements: h1, h2, ul */
-/* For h1: added tablet and desktio screen size */
+/* For h1 and h2: added tablet and desktop screen size */
 
 /* Base mobil */
 h1 {
@@ -23,48 +26,31 @@ h1 {
     font-style: normal;
 }
 
-/* Week 10: Standard tablet (768px+) */
-@media (min-width: 768px) {
-    h1 {
-        font-size: 2.8rem;
-        font-weight: 800;
-        font-style: italic;
-    }  
-}
-
-/* Week 10: Standard desktop/laptop (1024px+) */
-@media (min-width: 1024px) {
-    h1 {
-        font-size: 3.1rem;
-        letter-spacing: 1.5px;
-        font-style: normal;
-    }  
-}
-
-/* For h2: added tablet and desktop screen size */
-/* Base mobil */
 h2 {
     font-size: 1.8rem;
     font-weight: 600;
     color: #2E4057; /* deep blue*/
 }
 
-/* Week 10: Standard tablet (768px+) */
-@media (min-width: 768px) {
-    h2 {
-        font-size: 2rem;
-        color: #1E1E1E; /* deeper darker blue */
-    }  
+p {
+    color: #4C5C68;  /* slate blue color accent for paragraph */
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.5;
 }
 
-/* Week 10: Standard desktop/laptop (1024px+) */
-@media (min-width: 1024px) {
-    h2 {
-        font-size: 2.5rem;
-        letter-spacing: 0.5px;
-    }  
+li {
+    margin-bottom: 0.5rem;
 }
 
+a {
+    text-decoration: none;
+    color: #1E1E1E;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~ Nav Bar ~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 nav {
     text-align: center;
@@ -85,55 +71,19 @@ nav a { /* cleanup navigation links */
     font-weight: bold; /* Optional emphasis */
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~ Section Layout ~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 section {
     margin: 2rem auto;
     max-width: 800px;
     padding: 0rem 1rem;
 }
 
-p {
-    color: #4C5C68;  /* slate blue color accent for paragraph */
-    font-size: 1.1rem;
-    text-align: center;
-    line-height: 1.5;
-}
-
-/* For ul: added tablet and desktop screen size */
-/* Base mobil */
-ul { 
-    list-style: disc;
-    padding-left: 2rem;
-    margin-bottom: 2rem;
-}
-
-/* Week 10: Standard tablet (768px+) */
-@media (min-width: 768px) {
-    ul {
-        background-color: #fff; /* same as in Experience */
-        padding: 1rem 1rem 1rem 3rem;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 1rem;
-        border-radius: 8px;
-        list-style-position: inside;
-    }  
-}
-
-/* Week 10: Standard desktop/laptop (1024px+) */
-@media (min-width: 1024px) {
-    ul {
-        margin-bottom: 3rem;
-        border-radius: 8px;
-    }  
-}
-
-li {
-    margin-bottom: 0.5rem;
-}
-
-a {
-    text-decoration: none;
-    color: #1E1E1E;
-}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~ Section EXPERIENCE ~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* #Experience li {
     background-color: #fff;
@@ -179,6 +129,34 @@ a {
     margin-bottom: auto;
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~ Section SKILLS ~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Week 11: Using flexbox to organize and adjust the layout of the skills list. */
+.skills-list {
+    display: flex; /* Flexbox is on */
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem;
+    list-style: none;
+    margin: 0 auto;
+    max-width: 700px;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .skills-list li {
+    background-color: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~ Section CONNECT ~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~Grid Layout~~~~~~~~~~~~~~~~~~~~ */
 
 /* #Connect a:hover {
     text-decoration: underline;
@@ -223,7 +201,87 @@ a {
   .connect-links a:hover {
     background-color: #e0e0e0;
   }
-  
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~ Section FOOTER ~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.site-footer {
+    background-color: #F5F5F5;
+    padding: 1rem; 
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #333;
+  }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~ Global ul Styling ~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* For ul: added tablet and desktop screen size */
+/* Base mobil */
+ul { 
+    list-style: disc;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Week 10: Standard tablet (768px+) */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        font-style: italic;
+    }  
+
+    h2 {
+        font-size: 2rem;
+        color: #1E1E1E; /* deeper darker blue */
+    }  
+
+    ul {
+        background-color: #fff; /* same as in Experience */
+        padding: 1rem 1rem 1rem 3rem;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        list-style-position: inside;
+    }  
+
+    .skills-list {
+        justify-content: center;
+        gap: 1rem 2 rem;
+    }
+}
+
+/* Week 10: Standard desktop/laptop (1024px+) */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 3.1rem;
+        letter-spacing: 1.5px;
+        font-style: normal;
+    }  
+
+    h2 {
+        font-size: 2.5rem;
+        letter-spacing: 0.5px;
+    }  
+
+    ul {
+        margin-bottom: 3rem;
+        border-radius: 8px;
+    }  
+
+    .skills-list li {
+        font-size: 1rem;
+        padding: 0.75rem 1.25rem;
+    }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~ Unused Media blocks ~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+ 
 /* Week 10 changes: 
 Adjusting for a Standard table style (768px +)
 Adjusting for a Standard desktop/laptop style (1024px +)
