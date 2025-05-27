@@ -48,6 +48,11 @@ a {
     color: #1E1E1E;
 }
 
+a:hover {
+  text-decoration: underline;
+  color: #2E4057;
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~ Nav Bar ~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -80,6 +85,28 @@ section {
     max-width: 800px;
     padding: 0rem 1rem;
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~ Section About ~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.content-box {
+    background-color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.about-text {
+    margin: 0 auto; /* centered text inside the box */
+    text-align: center;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    color: #3a3a3a;
+    /* max-width: 60ch; length of one line is +/- 60 chars for visual experience */
+
+}
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~ Section EXPERIENCE ~~~~~~~~~~~~~~~~~ */
@@ -141,7 +168,7 @@ section {
     padding: 1rem;
     list-style: none;
     margin: 0 auto;
-    max-width: 700px;
+    max-width: 800px;
     justify-content: space-between;
     align-items: baseline;
   }
@@ -203,6 +230,90 @@ section {
   }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~ Leave a Message ~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Week-12 */
+/* Optimizing css to remove redundency: form[name="leave_message"]. In .html changed to <form class="leave-message-form" name="leave_message">  */
+/* form[name="leave_message"] { */
+.leave-message-form {
+    display: flex;              /* organizing elements vertically */
+    flex-direction: column;     /* organizeing items from top to bottom */
+    gap: 0.5rem;               /* space between input fields */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* border shadow, same as others */
+    max-width: 800px; /* same as Experience */
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+/* form[name="leave_message"] label { */
+.leave-message-form label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+    align-self: center;
+    
+}
+
+/* form[name="leave_message"] input,
+form[name="leave_message"] textarea { */
+.leave-message-form input,
+.leave-message-form textarea {
+  padding: 0.5rem;            /* space inside text box */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;           /* allow for msg input area to be resized verically */
+}
+
+/* Submit Button style */
+/* form[name="leave_message"] button[type="submit"] { */
+.leave-message-form button[type="submit"] {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #2E4057;
+  color: white;
+  margin-left: 0.5rem;
+  align-self: center; /* center allighned */
+}
+
+/* form[name="leave_message"] button[type="submit"]:hover { */
+.leave-message-form button[type="submit"]:hover {
+  background-color: #1e2e3f;
+  transform: scale(1.03);
+}
+
+.leave-message-form input::placeholder,
+.leave-message-form textarea::placeholder {
+    font-style: italic;
+    color: #888;
+    opacity: 0.5;
+}
+
+/* tooltip on hovering */
+.connect-links a:hover {
+    background-color: #e0e0e0;
+}
+
+/* messages are not visible unless there are messages */
+#messages {
+    display: none;
+}
+
+.message-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~ Section FOOTER ~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .site-footer {
@@ -252,6 +363,13 @@ ul {
         justify-content: center;
         gap: 1rem 2 rem;
     }
+/* Week-12 Leave a Message form */
+    form[name="leave_message"] input,
+    form[name="leave_message"] textarea,
+    form[name="leave_message"] button {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+  }
 }
 
 /* Week 10: Standard desktop/laptop (1024px+) */
@@ -276,6 +394,14 @@ ul {
         font-size: 1rem;
         padding: 0.75rem 1.25rem;
     }
+
+    /* Week-12 Leave a Message form */
+    form[name="leave_message"] input,
+    form[name="leave_message"] textarea,
+    form[name="leave_message"] button {
+        font-size: 1rem;
+        padding: 0.75rem 1.25rem;
+  }
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

@@ -78,21 +78,27 @@
         <a href="#Skills">Skills</a>
         <a href="#Projects">Projects</a>
         <a href="#Connect">Connect</a>
+        <a href="#leave-a-message">Leave a Message</a>
       </nav>
 
     <section id="About">
       <!-- Added a different picture other than myself -->
-        <img src="images/alley_cropped.jpg" alt="Linden trees" style="width: 100%; height: auto;">
+      <img src="images/alley_cropped.jpg" alt="Linden trees" style="width: 100%; height: auto;">
+        <!-- added white box to match the rest of the content -->
+         
       <h2>About</h2>
-      <p>
-        I am a detail-oriented and curious learner with a growing foundation in
-        programming and web development. Currently expanding my skills through
-        the Code the Dream bootcamp, I enjoy breaking down complex concepts into
-        clear solutions and continuously challenging myself with new projects.
-        With a background in creative thinking and a passion for clean,
-        purposeful design, I aim to build applications that are both functional
-        and user - friendly.
-      </p>  
+         
+      <div class="content-box">
+        <p class="about-text">
+          I am a detail-oriented and curious learner with a growing foundation in
+          programming and web development. Currently expanding my skills through
+          the Code the Dream bootcamp, I enjoy breaking down complex concepts into
+          clear solutions and continuously challenging myself with new projects.
+          With a background in creative thinking and a passion for clean,
+          purposeful design, I aim to build applications that are both functional
+          and user - friendly.
+        </p>
+      </div>
     </section>
 
     <section id="Experience">
@@ -151,6 +157,50 @@
         <a href="https://www.linkedin.com/in/placeholder" target="_blank" title="LinkedIn">LinkedIn</a>
       </div>
     </section>
+    
+    <!-- Week-12 changes: Leave a Message form -->
+    <section id="leave-a-message">
+      <h2>Leave a Message</h2>
+
+      <!-- <form name="leave_message"> Optimizing css to remove redundentform[name="leave_message"]-->
+        <form class="leave-message-form" name="leave_message">
+        <label for="usersName">Name:</label>
+        <!-- <br> -->
+        <input
+          type="text"
+          name="usersName"
+          required
+          placeholder="Enter your name">
+        <br>
+        
+        <label for="usersEmail">Email:</label>
+        <!-- <br> -->
+        <input
+          type="email"
+          name="usersEmail"
+          required
+          placeholder="someone@example.com">
+        <br>
+
+        <label for="usersMessage">Message:</label>
+        <!-- <br> -->
+        <textarea
+          name="usersMessage"
+          required
+          placeholder="Type your message here..."></textarea>
+        <br>
+        
+        <button type="submit">Submit</button>
+       </form>           
+    </section>
+
+    <section id="messages">
+    <h2>Messages</h2>
+      <ul>
+      </ul>
+    </section>
+
+    <!-- RE: FOOTER: see index.js - footer element is being dynamically created there. It is showing at the bottom of the page (body). See index.css for Footer's styling -->
     <script src="js/index.js"></script>
   </body>
 </html>
