@@ -68,6 +68,10 @@
             }
 
         </style> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />        
   </head>
   <body>
     <h1>Irina Lo</h1>
@@ -83,7 +87,7 @@
 
     <section id="About">
       <!-- Added a different picture other than myself -->
-      <img src="images/alley_cropped.jpg" alt="Linden trees" style="width: 100%; height: auto;">
+      <img src="images/alley_cropped.jpg" alt="Linden trees" class="about-image shadow-subtle" style="width: 100%; height: auto;">
         <!-- added white box to match the rest of the content -->
          
       <h2>About</h2>
@@ -137,10 +141,11 @@
 
     <section id="Projects">
       <h2>Projects</h2>
-      <ul>
+      <ul> 
+        <!-- commenting <li> out => adding via .js
         <li>Placeholder</li>
         <li>Placeholder</li>
-        <li>Placeholder</li>
+        <li>Placeholder</li> -->
       </ul>
     </section>
 
@@ -152,10 +157,28 @@
         <li><a href="https://www.linkedin.com/in/placeholder" target="_blank" title="Connect with me on LinkedIn"
             >LinkedIn</a></li>
       </ul> -->
-      <div class="connect-links">
+      <!-- <div class="connect-links">
         <a href="https://github.com/locirin" target="_blank" title="GitHub">GitHub</a>
         <a href="https://www.linkedin.com/in/placeholder" target="_blank" title="LinkedIn">LinkedIn</a>
-      </div>
+      </div> -->
+
+      <div class="connect-card">
+        <div class="connect-links">
+          <a href="https://github.com/locirin" target="_blank" title="GitHub">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/irina-lo-026350367"
+            target="_blank"
+            title="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="mailto:social-play0b@icloud.com" title="Email Me">
+            <i class="fa-solid fa-envelope"></i> Email
+          </a>
+        </div>
+      </div>      
     </section>
     
     <!-- Week-12 changes: Leave a Message form -->

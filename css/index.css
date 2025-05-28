@@ -2,17 +2,18 @@
 /* ~~~~~~~~~~~~~~~~~ Base Layout ~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 body {
-    background-color:#F5F5F5; /* minimalistic soft gray */
-    color: #1E1E1E; /*  charcoal text */
-    font-family: Roboto, Arial, sans-serif;
-    margin: 0;
-    /* padding: 0; */
-    padding: 80px 0 0;
+  background-color: #f5f5f5; /* minimalistic soft gray */
+  color: #1e1e1e; /*  charcoal text */
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+  /* padding: 0; */
+  padding: 80px 0 0;
 }
 
-h1, h2 {
-    text-align: center;
-    margin-bottom: 1rem;
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 /* Week 10: Media query style changes to 3 elements: h1, h2, ul */
@@ -20,37 +21,54 @@ h1, h2 {
 
 /* Base mobil */
 h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-style: normal;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-style: normal;
 }
 
 h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #2E4057; /* deep blue*/
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2e4057; /* deep blue*/
 }
 
 p {
-    color: #4C5C68;  /* slate blue color accent for paragraph */
-    font-size: 1.1rem;
-    text-align: center;
-    line-height: 1.5;
+  color: #4c5c68; /* slate blue color accent for paragraph */
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 1.5;
 }
 
 li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 a {
-    text-decoration: none;
-    color: #1E1E1E;
+  text-decoration: none;
+  color: #1e1e1e;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #2E4057;
+  color: #2e4057;
+}
+
+.experience-item,
+.content-box,
+.connect-card,
+#Projects ul,
+.leave-message-form {
+  background-color: #ffffff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-subtle {
+  /* 1). stronger shading vs 2). mellow shading */
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.08); */
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -58,22 +76,23 @@ a:hover {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 nav {
-    text-align: center;
-    margin-bottom: 2rem;
-    position: fixed; /* it sticks to the top */
-    top: 0; 
-    width: 100%;
-    background-color: white; /* ensure it doesn't become transparent over content */
-    z-index: 1000;
-    padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Optional. Subtle drop shadow */   
+  text-align: center;
+  margin-bottom: 2rem;
+  position: fixed; /* it sticks to the top */
+  top: 0;
+  width: 100%;
+  background-color: white; /* ensure it doesn't become transparent over content */
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional. Subtle drop shadow */
 }
 
-nav a { /* cleanup navigation links */
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #1E1E1E;
-    font-weight: bold; /* Optional emphasis */
+nav a {
+  /* cleanup navigation links */
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #1e1e1e;
+  font-weight: bold; /* Optional emphasis */
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -81,32 +100,38 @@ nav a { /* cleanup navigation links */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 section {
-    margin: 2rem auto;
-    max-width: 800px;
-    padding: 0rem 1rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 0rem 1rem;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~ Section About ~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.about-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .content-box {
-    background-color: #ffffff;
-    padding: 1rem;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-top: 1rem;
+  /* background-color: #ffffff; */
+  /* padding: 1rem; */
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); */
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .about-text {
-    margin: 0 auto; /* centered text inside the box */
-    text-align: center;
-    line-height: 1.7;
-    font-size: 1.1rem;
-    color: #3a3a3a;
-    /* max-width: 60ch; length of one line is +/- 60 chars for visual experience */
-
+  margin: 0 auto; /* centered text inside the box */
+  text-align: center;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  color: #3a3a3a;
+  /* max-width: 60ch; length of one line is +/- 60 chars for visual experience */
 }
-
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~ Section EXPERIENCE ~~~~~~~~~~~~~~~~~ */
@@ -120,40 +145,41 @@ section {
     border-radius: 8px;
 } */
 
-.experience-item { /* Replacing the old css with the new clean card look */
-    background-color: #fff;
-    padding: 1rem;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
-    border-radius: 8px;
+.experience-item {
+  /* Replacing the old css with the new clean card look */
+  background-color: #ffffff;
+  padding: 1rem;
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); */
+  margin-bottom: 1rem;
+  border-radius: 8px;
 }
 
 .experience-header {
-    display: flex; /* Flexbox is on */
-    justify-content: space-between; /* Text alignment: title left, dates right */
-    align-items: baseline;
-    flex-wrap: wrap;
+  display: flex; /* Flexbox is on */
+  justify-content: space-between; /* Text alignment: title left, dates right */
+  align-items: baseline;
+  flex-wrap: wrap;
 }
 
 .job-title {
-    font-weight: bold;
-    font-size: 1.1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .job-dates {
-    font-style: italic;
-    color: #555;
+  font-style: italic;
+  color: #555;
 }
 
 .job-description {
-    margin-top: 0.5rem;
-    line-height: 1.5;
-    /* text-align: left; old */
-    text-align: justify; /* optimizing the text even spreading */
-    width: 100%; /* filling parent's full width */
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: auto;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  /* text-align: left; old */
+  text-align: justify; /* optimizing the text even spreading */
+  width: 100%; /* filling parent's full width */
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: auto;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -162,24 +188,76 @@ section {
 
 /* Week 11: Using flexbox to organize and adjust the layout of the skills list. */
 .skills-list {
-    display: flex; /* Flexbox is on */
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    padding: 1rem;
-    list-style: none;
-    margin: 0 auto;
-    max-width: 800px;
-    justify-content: space-between;
-    align-items: baseline;
-  }
+  display: flex; /* Flexbox is on */
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 800px;
+  justify-content: space-between;
+  align-items: baseline;
+  /* adding box shading */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.08);
+}
 
-  .skills-list li {
-    background-color: #f0f0f0;
-    padding: 0.5rem 1rem;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
+.skills-list li {
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~ Section Projects ~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Week 13: Styling Project list links */
+
+#Projects ul {
+  list-style-type: none;
+  background-color: #ffffff;
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); */
+  margin: 0 auto;
+  max-width: 800px;
+  border-radius: 8px;
+  /* padding: 1.5rem; */
+  padding-top: 1rem;
+  padding-bottom: 0.7rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  /* STRETCH goal: Use flexbox (or grid) to style your list of repositories */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 1rem; */
+}
+
+#Projects li {
+  padding: 0 1rem;
+  /* margin-bottom: 0.5rem; */
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  /* box-shadow: 0;
+  background-color: transparent;
+  border-radius: 0px; */
+}
+
+#Projects li a {
+  color: #2e4057;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.3rem 0.75rem;
+}
+
+#Projects li a:hover {
+  color: #1e2e3f;
+  text-decoration: underline;
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~ Section CONNECT ~~~~~~~~~~~~~~~~~ */
@@ -201,33 +279,54 @@ section {
 
 /* Week 10 changes: STRETCH: replacing flex with grid */
 .connect-links {
-    /* display: flex;
-    justify-content: center;
-    flex-wrap: wrap;*/
-    gap: 2rem;
-    margin-top: 1rem;
-    /* Week 10 edit: */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    justify-items: center;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  width: 80%;
+  justify-items: center;
+  padding: 1rem 0; /* vertical breathing space */
+}
 
-  /* links style */
-  .connect-links a {
-    text-decoration: none;
-    color: #1E1E1E;
-    font-weight: bold;
-    background-color: #fff;
-    padding: 0.75rem 1.25rem;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease;
-  }
-  
-  /* tooltip on hovering */
-  .connect-links a:hover {
-    background-color: #e0e0e0;
-  }
+/* links style */
+.connect-links a {
+  text-decoration: none;
+  color: #1e1e1e;
+  font-weight: bold;
+  background-color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  /* box-shadow: 0 1px 4px rgba(0,0,0,0.1); */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* More shadow */
+  transition: background-color 0.3s ease;
+  border: 1px solid #edeaea; /* more visible border */
+}
+
+.connect-card {
+  background-color: #ffffff;
+  padding: 1rem;
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); */
+  margin-top: 1rem;
+  border-radius: 8px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex; /* centering buttons horizontally and vertically */
+  align-items: center; /* vertical centering */
+  justify-content: center; /* horizontal centering */
+}
+
+/* tooltip on hovering */
+.connect-links a:hover {
+  /* background-color: #e0e0e0; */
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-color: #999;
+}
+
+.connect-links i {
+  margin-right: 0.5rem;
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~ Leave a Message ~~~~~~~~~~~~~~~ */
@@ -236,35 +335,37 @@ section {
 /* Optimizing css to remove redundency: form[name="leave_message"]. In .html changed to <form class="leave-message-form" name="leave_message">  */
 /* form[name="leave_message"] { */
 .leave-message-form {
-    display: flex;              /* organizing elements vertically */
-    flex-direction: column;     /* organizeing items from top to bottom */
-    gap: 0.5rem;               /* space between input fields */
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* border shadow, same as others */
-    max-width: 800px; /* same as Experience */
-    margin: 0 auto;
-    background-color: #ffffff;
+  display: flex; /* organizing elements vertically */
+  flex-direction: column; /* organizeing items from top to bottom */
+  gap: 0.5rem; /* space between input fields */
+  padding: 2rem;
+  border-radius: 8px;
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);  */
+  max-width: 800px; /* same as Experience */
+  margin: 0 auto;
+  background-color: #ffffff;
 }
 
 /* form[name="leave_message"] label { */
 .leave-message-form label {
-    font-weight: bold;
-    font-size: 1rem;
-    color: #333;
-    align-self: center;
-    
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+  align-self: center;
 }
 
 /* form[name="leave_message"] input,
 form[name="leave_message"] textarea { */
 .leave-message-form input,
 .leave-message-form textarea {
-  padding: 0.5rem;            /* space inside text box */
+  padding: 0.5rem; /* space inside text box */
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  resize: vertical;           /* allow for msg input area to be resized verically */
+  resize: vertical; /* allow for msg input area to be resized verically */
+  width: 70%;
+  max-width: 600px;
+  align-self: center;
 }
 
 /* Submit Button style */
@@ -276,7 +377,7 @@ form[name="leave_message"] textarea { */
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  background-color: #2E4057;
+  background-color: #2e4057;
   color: white;
   margin-left: 0.5rem;
   align-self: center; /* center allighned */
@@ -290,40 +391,57 @@ form[name="leave_message"] textarea { */
 
 .leave-message-form input::placeholder,
 .leave-message-form textarea::placeholder {
-    font-style: italic;
-    color: #888;
-    opacity: 0.5;
+  font-style: italic;
+  color: #888;
+  opacity: 0.5;
 }
 
 /* tooltip on hovering */
 .connect-links a:hover {
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
 
 /* messages are not visible unless there are messages */
 #messages {
-    display: none;
+  display: none;
 }
 
 .message-buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
+.message-buttons button {
+  width: auto;
+  padding: 0.4rem 1rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #2e4057;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+  min-width: 80px;
+  text-align: center;
+}
+
+.message-buttons button:hover {
+  background-color: #1e2e3f;
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~ Section FOOTER ~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .site-footer {
-    background-color: #F5F5F5;
-    padding: 1rem; 
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    text-align: center;
-    color: #333;
-  }
+  background-color: #f5f5f5;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #333;
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~ Global ul Styling ~~~~~~~~~~~~~~~ */
@@ -331,83 +449,83 @@ form[name="leave_message"] textarea { */
 
 /* For ul: added tablet and desktop screen size */
 /* Base mobil */
-ul { 
-    list-style: disc;
-    padding-left: 2rem;
-    margin-bottom: 2rem;
+ul {
+  list-style: disc;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Week 10: Standard tablet (768px+) */
 @media (min-width: 768px) {
-    h1 {
-        font-size: 2.8rem;
-        font-weight: 800;
-        font-style: italic;
-    }  
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    font-style: italic;
+  }
 
-    h2 {
-        font-size: 2rem;
-        color: #1E1E1E; /* deeper darker blue */
-    }  
+  h2 {
+    font-size: 2rem;
+    color: #1e1e1e; /* deeper darker blue */
+  }
 
-    ul {
-        background-color: #fff; /* same as in Experience */
-        padding: 1rem 1rem 1rem 3rem;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 1rem;
-        border-radius: 8px;
-        list-style-position: inside;
-    }  
+  ul {
+    background-color: #fff; /* same as in Experience */
+    padding: 1rem 1rem 1rem 3rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    list-style-position: inside;
+  }
 
-    .skills-list {
-        justify-content: center;
-        gap: 1rem 2 rem;
-    }
-/* Week-12 Leave a Message form */
-    form[name="leave_message"] input,
-    form[name="leave_message"] textarea,
-    form[name="leave_message"] button {
-        font-size: 1rem;
-        padding: 0.75rem 1rem;
+  .skills-list {
+    justify-content: center;
+    gap: 1rem 2 rem;
+  }
+  /* Week-12 Leave a Message form */
+  form[name="leave_message"] input,
+  form[name="leave_message"] textarea,
+  form[name="leave_message"] button {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
   }
 }
 
 /* Week 10: Standard desktop/laptop (1024px+) */
 @media (min-width: 1024px) {
-    h1 {
-        font-size: 3.1rem;
-        letter-spacing: 1.5px;
-        font-style: normal;
-    }  
+  h1 {
+    font-size: 3.1rem;
+    letter-spacing: 1.5px;
+    font-style: normal;
+  }
 
-    h2 {
-        font-size: 2.5rem;
-        letter-spacing: 0.5px;
-    }  
+  h2 {
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+  }
 
-    ul {
-        margin-bottom: 3rem;
-        border-radius: 8px;
-    }  
+  ul {
+    margin-bottom: 3rem;
+    border-radius: 8px;
+  }
 
-    .skills-list li {
-        font-size: 1rem;
-        padding: 0.75rem 1.25rem;
-    }
+  .skills-list li {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
 
-    /* Week-12 Leave a Message form */
-    form[name="leave_message"] input,
-    form[name="leave_message"] textarea,
-    form[name="leave_message"] button {
-        font-size: 1rem;
-        padding: 0.75rem 1.25rem;
+  /* Week-12 Leave a Message form */
+  form[name="leave_message"] input,
+  form[name="leave_message"] textarea,
+  form[name="leave_message"] button {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
   }
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~ Unused Media blocks ~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
- 
+
 /* Week 10 changes: 
 Adjusting for a Standard table style (768px +)
 Adjusting for a Standard desktop/laptop style (1024px +)
