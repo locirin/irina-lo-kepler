@@ -135,7 +135,7 @@ document.body.appendChild(footer);
 // Console output check
 console.log(`Footer is added to the bottom of the page.`, footer);
 
-// Week-13 changes  
+// Week-13 changes
 //~~~~~~~~~~~~~~~~ Projects ~~~~~~~~~~~~~~~~//
 
 fetch("https://api.github.com/users/locirin/repos") //making request to git
@@ -159,7 +159,7 @@ fetch("https://api.github.com/users/locirin/repos") //making request to git
     // show the most recent 2 repos
     let recentRepos = repos
       .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
-      .slice(0, 2);
+      .slice(0, 3);
 
     // show existing repos first
     for (let i = 0; i < recentRepos.length; i++) {
@@ -192,9 +192,9 @@ fetch("https://api.github.com/users/locirin/repos") //making request to git
     }
 
     // show placeholder after existing repos
-    let placeholder = document.createElement("li");
-    placeholder.textContent = "Placeholder for upcoming project";
-    projectList.appendChild(placeholder);
+    // let placeholder = document.createElement("li");
+    // placeholder.textContent = "Placeholder for upcoming project";
+    // projectList.appendChild(placeholder);
   })
   .catch((error) => {
     console.error("An error occurred", error.message);
