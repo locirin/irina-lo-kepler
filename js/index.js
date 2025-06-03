@@ -23,6 +23,8 @@ for (let i = 0; i < skills.length; i++) {
 // selecting form by attribute
 const messageForm = document.forms["leave_message"];
 
+document.getElementById("messages").style.display = "none";
+
 // addEventListener --> for message form for Submit action
 messageForm.addEventListener("submit", function (event) {
   event.preventDefault(); // preventing the default refreshing behavior of the "submit" event
@@ -58,7 +60,7 @@ messageForm.addEventListener("submit", function (event) {
 
   // Button "Remove"
   const removeButton = document.createElement("button");
-  removeButton.innerText = "remove";
+  removeButton.innerText = "Remove";
   removeButton.type = "button";
 
   // addEventListener for --> click button action
@@ -78,7 +80,7 @@ messageForm.addEventListener("submit", function (event) {
 
   // Button "Edit" - OPTIONAL
   const editButton = document.createElement("button");
-  editButton.innerText = "edit";
+  editButton.innerText = "Edit";
   editButton.type = "button";
 
   // addEventListener for --> click button action
@@ -199,3 +201,27 @@ fetch("https://api.github.com/users/locirin/repos") //making request to git
   .catch((error) => {
     console.error("An error occurred", error.message);
   });
+
+// Week-15 changes Optional
+//~~~~~~~~~~~~~~~~ Dark Mode Toggle ~~~~~~~~~~~~~~~~//
+
+// Selecting toggle button
+const toggleButton = document.getElementById("dark-mode-toggle");
+
+// Adding EventListener for click to toggle
+toggleButton.addEventListener("click", function () {
+  document.body.classList.toggle("dark-mode");
+
+  const theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+  localStorage.setItem("theme", theme);
+
+});
+
+// When page reloads => checking user saved selection
+window.addEventListener("DOMContentLoaded", function () {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+
+});
