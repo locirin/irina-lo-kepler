@@ -14,12 +14,16 @@ h1,
 h2 {
   text-align: center;
   margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  /* color: #1E1E1E; */
+  color: #2e4057;
 }
 
-/* Week 10: Media query style changes to 3 elements: h1, h2, ul */
-/* For h1 and h2: added tablet and desktop screen size */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~ ~~Mobile Layout Base Style ≤ 767px ~~~~~~~~ */
+/* These styles apply to all screens unless overridden by media queries */
 
-/* Base mobil */
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -30,7 +34,7 @@ h1 {
 h2 {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #2e4057; /* deep blue*/
+  color: #2e4057;
 }
 
 p {
@@ -66,9 +70,7 @@ a:hover {
 }
 
 .shadow-subtle {
-  /* 1). stronger shading vs 2). mellow shading */
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
-  /* box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.08); */
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -77,22 +79,61 @@ a:hover {
 
 nav {
   text-align: center;
-  margin-bottom: 2rem;
-  position: fixed; /* it sticks to the top */
+  margin-bottom: 1.5rem;
+  position: fixed;
   top: 0;
   width: 100%;
-  background-color: white; /* ensure it doesn't become transparent over content */
+  background-color: white;
   z-index: 1000;
   padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional. Subtle drop shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
-  /* cleanup navigation links */
   margin: 0 1rem;
   text-decoration: none;
   color: #1e1e1e;
-  font-weight: bold; /* Optional emphasis */
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+}
+
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 1rem;
+  cursor: pointer;
+  color: #1e1e1e;
+  font-size: 1.1rem;
+}
+
+#dark-mode-toggle:hover {
+  color: #2e4057;
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 0.25rem 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  #dark-mode-toggle {
+    margin-top: 0.5rem;
+  }
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -112,12 +153,10 @@ section {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  transition: filter 0.5s ease, box-shadow 0.5s ease;
 }
 
 .content-box {
-  /* background-color: #ffffff; */
-  /* padding: 1rem; */
-  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); */
   border-radius: 8px;
   margin-top: 1rem;
   padding-left: 1rem;
@@ -125,38 +164,27 @@ section {
 }
 
 .about-text {
-  margin: 0 auto; /* centered text inside the box */
+  margin: 0 auto;
   text-align: center;
   line-height: 1.7;
   font-size: 1.1rem;
   color: #3a3a3a;
-  /* max-width: 60ch; length of one line is +/- 60 chars for visual experience */
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~ Section EXPERIENCE ~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-/* #Experience li {
-    background-color: #fff;
-    padding: 1rem;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    margin-bottom: 1rem;
-    border-radius: 8px;
-} */
-
 .experience-item {
-  /* Replacing the old css with the new clean card look */
   background-color: #ffffff;
   padding: 1rem;
-  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); */
   margin-bottom: 1rem;
   border-radius: 8px;
 }
 
 .experience-header {
-  display: flex; /* Flexbox is on */
-  justify-content: space-between; /* Text alignment: title left, dates right */
+  display: flex;
+  justify-content: space-between;
   align-items: baseline;
   flex-wrap: wrap;
 }
@@ -174,7 +202,6 @@ section {
 .job-description {
   margin-top: 0.5rem;
   line-height: 1.5;
-  /* text-align: left; old */
   text-align: justify; /* optimizing the text even spreading */
   width: 100%; /* filling parent's full width */
   display: block;
@@ -186,9 +213,8 @@ section {
 /* ~~~~~~~~~~~~~~~~~ Section SKILLS ~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-/* Week 11: Using flexbox to organize and adjust the layout of the skills list. */
 .skills-list {
-  display: flex; /* Flexbox is on */
+  display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   padding: 1.5rem;
@@ -197,7 +223,6 @@ section {
   max-width: 800px;
   justify-content: space-between;
   align-items: baseline;
-  /* adding box shading */
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -215,36 +240,29 @@ section {
 /* ~~~~~~~~~~~~~~~~~ Section Projects ~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-/* Week 13: Styling Project list links */
-
 #Projects ul {
   list-style-type: none;
   background-color: #ffffff;
-  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); */
   margin: 0 auto;
   max-width: 800px;
   border-radius: 8px;
-  /* padding: 1.5rem; */
   padding-top: 1rem;
   padding-bottom: 0.7rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  /* STRETCH goal: Use flexbox (or grid) to style your list of repositories */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* gap: 1rem; */
 }
 
 #Projects li {
-  padding: 0 1rem;
-  /* margin-bottom: 0.5rem; */
-  font-size: 1.1rem;
-  font-weight: 500;
-  text-align: center;
-  /* box-shadow: 0;
-  background-color: transparent;
-  border-radius: 0px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  padding: 0.2rem;
+  white-space: nowrap;
 }
 
 #Projects li a {
@@ -263,31 +281,15 @@ section {
 /* ~~~~~~~~~~~~~~~~ Section CONNECT ~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~Grid Layout~~~~~~~~~~~~~~~~~~~~ */
 
-/* #Connect a:hover {
-    text-decoration: underline;
-  }
-
-#Connect a {
-    color: #4C5C68;
-    font-weight: 500;
-    display: inline-flex; 
-    align-items: center; 
-    gap: 0.5rem;
-} */
-/* Replacing the old css with the new clean card look */
-/* Flex */
-
-/* Week 10 changes: STRETCH: replacing flex with grid */
 .connect-links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.5rem;
   width: 80%;
   justify-items: center;
-  padding: 1rem 0; /* vertical breathing space */
+  padding: 1rem 0;
 }
 
-/* links style */
 .connect-links a {
   text-decoration: none;
   color: #1e1e1e;
@@ -295,30 +297,27 @@ section {
   background-color: #fff;
   padding: 0.75rem 1.25rem;
   border-radius: 8px;
-  /* box-shadow: 0 1px 4px rgba(0,0,0,0.1); */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* More shadow */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
-  border: 1px solid #edeaea; /* more visible border */
+  border: 1px solid #edeaea;
 }
 
 .connect-card {
   background-color: #ffffff;
   padding: 1rem;
-  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); */
   margin-top: 1rem;
   border-radius: 8px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 
-  display: flex; /* centering buttons horizontally and vertically */
-  align-items: center; /* vertical centering */
-  justify-content: center; /* horizontal centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* tooltip on hovering */
 .connect-links a:hover {
-  /* background-color: #e0e0e0; */
   background-color: #f0f0f0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   border-color: #999;
@@ -331,22 +330,18 @@ section {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~ Leave a Message ~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* Week-12 */
-/* Optimizing css to remove redundency: form[name="leave_message"]. In .html changed to <form class="leave-message-form" name="leave_message">  */
-/* form[name="leave_message"] { */
+
 .leave-message-form {
-  display: flex; /* organizing elements vertically */
-  flex-direction: column; /* organizeing items from top to bottom */
-  gap: 0.5rem; /* space between input fields */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   padding: 2rem;
   border-radius: 8px;
-  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);  */
-  max-width: 800px; /* same as Experience */
+  max-width: 800px;
   margin: 0 auto;
   background-color: #ffffff;
 }
 
-/* form[name="leave_message"] label { */
 .leave-message-form label {
   font-weight: bold;
   font-size: 1rem;
@@ -354,22 +349,18 @@ section {
   align-self: center;
 }
 
-/* form[name="leave_message"] input,
-form[name="leave_message"] textarea { */
 .leave-message-form input,
 .leave-message-form textarea {
-  padding: 0.5rem; /* space inside text box */
+  padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  resize: vertical; /* allow for msg input area to be resized verically */
+  resize: vertical;
   width: 70%;
   max-width: 600px;
   align-self: center;
 }
 
-/* Submit Button style */
-/* form[name="leave_message"] button[type="submit"] { */
 .leave-message-form button[type="submit"] {
   font-size: 1rem;
   padding: 0.5rem 1rem;
@@ -380,13 +371,11 @@ form[name="leave_message"] textarea { */
   background-color: #2e4057;
   color: white;
   margin-left: 0.5rem;
-  align-self: center; /* center allighned */
+  align-self: center;
 }
 
-/* form[name="leave_message"] button[type="submit"]:hover { */
 .leave-message-form button[type="submit"]:hover {
   background-color: #1e2e3f;
-  transform: scale(1.03);
 }
 
 .leave-message-form input::placeholder,
@@ -396,15 +385,52 @@ form[name="leave_message"] textarea { */
   opacity: 0.5;
 }
 
-/* tooltip on hovering */
 .connect-links a:hover {
   background-color: #e0e0e0;
 }
 
+/* ~~~~~~~~~~ Messages section ~~~~~~~~~~~~ */
 /* messages are not visible unless there are messages */
 #messages {
-  display: none;
+  color: #1e1e1e;
+  max-width: 800px;
+  margin: 2rem auto;
 }
+
+#messages .message-tile {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+#messages ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#messages li {
+  color: #1e1e1e;
+  background-color: transparent;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#messages a {
+  color: #2e4057;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 0.25rem;
+}
+
+/* ~~~ Buttons ~~~~~ */
 
 .message-buttons {
   display: flex;
@@ -419,10 +445,12 @@ form[name="leave_message"] textarea { */
   font-size: 0.95rem;
   border: none;
   border-radius: 4px;
-  background-color: #2e4057;
+  /* background-color: #2e4057; */
+  background-color: #3a5a80;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  color: white;
+  /* color: white; */
+  color: #ffffff;
   min-width: 80px;
   text-align: center;
 }
@@ -447,29 +475,28 @@ form[name="leave_message"] textarea { */
 /* ~~~~~~~~~~~~~~~~ Global ul Styling ~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-/* For ul: added tablet and desktop screen size */
-/* Base mobil */
 ul {
   list-style: disc;
   padding-left: 2rem;
   margin-bottom: 2rem;
 }
 
-/* Week 10: Standard tablet (768px+) */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~ Tablet Layout 768px–1023px ~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 @media (min-width: 768px) {
   h1 {
     font-size: 2.8rem;
     font-weight: 800;
-    font-style: italic;
   }
 
   h2 {
     font-size: 2rem;
-    color: #1e1e1e; /* deeper darker blue */
   }
 
   ul {
-    background-color: #fff; /* same as in Experience */
+    background-color: #fff;
     padding: 1rem 1rem 1rem 3rem;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
@@ -479,9 +506,8 @@ ul {
 
   .skills-list {
     justify-content: center;
-    gap: 1rem 2 rem;
+    gap: 1rem 2rem;
   }
-  /* Week-12 Leave a Message form */
   form[name="leave_message"] input,
   form[name="leave_message"] textarea,
   form[name="leave_message"] button {
@@ -490,7 +516,10 @@ ul {
   }
 }
 
-/* Week 10: Standard desktop/laptop (1024px+) */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~ Desktop Layout 1024px + ~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 @media (min-width: 1024px) {
   h1 {
     font-size: 3.1rem;
@@ -513,7 +542,6 @@ ul {
     padding: 0.75rem 1.25rem;
   }
 
-  /* Week-12 Leave a Message form */
   form[name="leave_message"] input,
   form[name="leave_message"] textarea,
   form[name="leave_message"] button {
@@ -523,17 +551,185 @@ ul {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* ~~~~~~~~~~~~~~~ Unused Media blocks ~~~~~~~~~~~~~~ */
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~ Dark Mode Styling ~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~ for dark mode experience ~~~~~~~~~~~ */
 
-/* Week 10 changes: 
-Adjusting for a Standard table style (768px +)
-Adjusting for a Standard desktop/laptop style (1024px +)
-
-@media (min-width: 768px) {
-
+body.dark-mode {
+  color: #f1f3f7;
+  background-color: #3a3f47;
 }
 
-@media (min-width: 1024px) {
+body.dark-mode nav {
+  color: #f1f3f7;
+  background-color: #474c55;
+}
 
-} */
+body.dark-mode .about-image {
+  filter: brightness(0.65) contrast(0.9) saturate(0.7);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode a {
+  color: #d9dee6;
+}
+
+body.dark-mode h1,
+body.dark-mode h2 {
+  color: #f1f3f7;
+}
+
+body.dark-mode h2 {
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .content-box,
+body.dark-mode .experience-item,
+body.dark-mode .connect-card,
+body.dark-mode .leave-message-form,
+body.dark-mode #Projects ul {
+  color: #f1f3f7;
+  background-color: #484d56;
+  border: 1px solid #5b616a;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  color: #f1f3f7;
+  background-color: #535861;
+  border: 1px solid #6b7079;
+}
+
+body.dark-mode .skills-list li {
+  color: #f7f9fb;
+  background-color: #5c616b;
+  border: 1px solid #7a7f88;
+}
+
+body.dark-mode button:hover,
+body.dark-mode .message-buttons button:hover {
+  color: #ffffff;
+  background-color: #7b818b;
+}
+
+body.dark-mode .connect-links a {
+  color: #f1f3f7;
+  background-color: #4d525b;
+  border: 1px solid #6a6f78;
+}
+
+body.dark-mode .connect-links a:hover {
+  color: #ffffff;
+  background-color: #6b707a;
+  border-color: #9da2aa;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode #dark-mode-toggle {
+  color: #f1f3f7;
+}
+
+body.dark-mode #dark-mode-toggle .fa-sun {
+  opacity: 0.4;
+}
+
+body:not(.dark-mode) #dark-mode-toggle .fa-moon {
+  opacity: 0.4;
+}
+
+/* ~~~~~~~~~~~~~~~ Readability and contrast adjustments ~~~~~~~~~~~~~~ */
+
+body.dark-mode .content-box p,
+body.dark-mode .experience-item,
+body.dark-mode #Projects li {
+  color: #f1f3f7;
+}
+
+body.dark-mode .job-description {
+  color: #e6e9ef;
+}
+
+body.dark-mode .job-dates {
+  color: #b2b5bc;
+}
+
+body.dark-mode .skills-list {
+  background-color: #484d56;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+}
+
+body.dark-mode #Projects li,
+body.dark-mode #Projects li a {
+  color: #d7dbe3;
+}
+
+body.dark-mode .leave-message-form label {
+  color: #d8dbe2;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #b2b5bc;
+  opacity: 0.7;
+}
+
+body.dark-mode footer,
+body.dark-mode .site-footer {
+  color: #bfc3cc;
+  background-color: #3a3f47;
+}
+
+body.dark-mode footer p,
+body.dark-mode .site-footer {
+  color: #d0d4dc;
+  background-color: #3a3f47;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+/* ~~~~~~~~~~~~~~~ Messages Section >> Dark Mode Styling ~~~~~~~~~~~~~~~ */
+
+/* Outer messages box */
+body.dark-mode #messages {
+  color: #f1f3f7;
+}
+
+body.dark-mode #messages .message-tile {
+  background-color: #484d56;
+  border: 1px solid #5b616a;
+}
+
+body.dark-mode #messages li {
+  color: #e4e7ec;
+  background-color: #484d56;
+  border-bottom: 1px solid #5b616a;
+}
+
+/* Sender name (email link) */
+body.dark-mode #messages a {
+  color: #d4d8e0;
+}
+
+body.dark-mode #messages span {
+  color: #c3c7d1;
+}
+
+body.dark-mode .message-buttons {
+  margin-top: 0.5rem;
+}
+
+body.dark-mode .message-buttons button {
+  color: #ffffff;
+  background-color: #2e4057;
+  border: none;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .message-buttons button:hover {
+  background-color: #1e2e3f;
+}

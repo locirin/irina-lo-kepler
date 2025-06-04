@@ -3,164 +3,96 @@
   <head>
     <title>Irina Lo's Portfolio</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Portfolio site for Irina Lo, web development, experience, connect links." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio site for Irina Lo, web development, experience, connect links."
+    />
     <meta name="keywords" content="HTML, CSS, JavaScript" />
     <meta name="author" content="Irina Lo" />
 
-    <link href="css/index.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet" />
     <!-- Stretch goal 8: Adding Google fonts: -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-<!-- Stretch goal 7: Optional basic styling. Moved it to an external css -->
-<!--     <style> 
-            body {
-                background-color:#F5F5F5; /* minimalistic soft gray */
-                color: #1E1E1E; /*  charcoal text */
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-            }
-
-            h1, h2 {
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-            nav {
-                text-align: center;
-                margin-bottom: 2rem;
-            }
-
-            nav a { /* cleanup navigation links */
-                margin: 0 1rem;
-                text-decoration: none;
-                color: #1E1E1E;
-            }
-
-            section {
-                margin: 2rem auto;
-                max-width: 800px;
-                padding: 0rem 1rem;
-            }
-            
-            p {
-                color: #4C5C68;  /* slate blue color accent for paragraph */
-                font-size: 1.1rem;
-                text-align: center;
-                line-height: 1.5;
-            }
-
-            ul { 
-                list-style: disc;
-                padding-left: 2rem;
-                margin-bottom: 2rem;
-            }
-
-            li {
-                margin-bottom: 0.5rem;
-            }
-
-            a {
-                text-decoration: none;
-                color: #1E1E1E;
-            }
-
-        </style> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />        
+    />
   </head>
   <body>
     <h1>Irina Lo</h1>
 
     <nav>
-        <a href="#About">About</a>
-        <a href="#Experience">Experience</a>
-        <a href="#Skills">Skills</a>
-        <a href="#Projects">Projects</a>
-        <a href="#Connect">Connect</a>
-        <a href="#leave-a-message">Leave a Message</a>
-      </nav>
+      <a href="#About">About</a>
+      <a href="#Experience">Experience</a>
+      <a href="#Skills">Skills</a>
+      <a href="#Projects">Projects</a>
+      <a href="#Connect">Connect</a>
+      <a href="#leave-a-message">Leave a Message</a>
+
+      <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i> / <i class="fas fa-sun"></i>
+      </button>
+    </nav>
 
     <section id="About">
-      <!-- Added a different picture other than myself -->
-      <img src="images/alley_cropped.jpg" alt="Linden trees" class="about-image shadow-subtle" style="width: 100%; height: auto;">
-        <!-- added white box to match the rest of the content -->
-         
+      <img
+        src="images/alley_cropped.jpg"
+        alt="Linden trees"
+        class="about-image shadow-subtle"
+        style="width: 100%; height: auto"
+      />
+
       <h2>About</h2>
-         
+
       <div class="content-box">
         <p class="about-text">
-          I am a detail-oriented and curious learner with a growing foundation in
-          programming and web development. Currently expanding my skills through
-          the Code the Dream bootcamp, I enjoy breaking down complex concepts into
-          clear solutions and continuously challenging myself with new projects.
-          With a background in creative thinking and a passion for clean,
-          purposeful design, I aim to build applications that are both functional
-          and user - friendly.
+          I am a detail-oriented and curious learner with a growing foundation
+          in programming and web development. Currently expanding my skills
+          through the Code the Dream bootcamp, I enjoy breaking down complex
+          concepts into clear solutions and continuously challenging myself with
+          new projects. With a background in creative thinking and a passion for
+          clean, purposeful design, I aim to build applications that are both
+          functional and user - friendly.
         </p>
       </div>
     </section>
 
     <section id="Experience">
       <h2>Experience</h2>
-      <!-- Commenting our for now. Replacing current list with divs to accomodate better layout: flexbox -->
-      <!-- <ul>
-        <li>Code the Dream Bootcamp: Introduction to Programming</li>
-        <li>GitHub collaboration</li>
-        <li>Agile principles and collaborative workflow</li>
-        <li>Continuous development and delivery (CI/CD)</li>
-      </ul> -->
+
       <div class="experience-item">
         <div class="experience-header">
           <span class="job-title">Code the Dream Bootcamp</span>
           <span class="job-dates">February, 2025 - Present</span>
         </div>
         <p class="job-description">
-          Learning foundational programming, GitHub collaboration, Agile workflow, and CI/CD principles.
-          Introduction to Programming, GitHub collaboration, Agile principles and collaborative workflow, Continuous development and delivery (CI/CD).
+          Learning foundational programming, GitHub collaboration, Agile
+          workflow, and CI/CD principles. Introduction to Programming, GitHub
+          collaboration, Agile principles and collaborative workflow, Continuous
+          development and delivery (CI/CD).
         </p>
       </div>
     </section>
 
     <section id="Skills">
       <h2>Skills</h2>
-      <!-- Week 11: Commenting out and replacing with <ul>. A new Skill section is added to index.js -->
-      <ul class="skills-list"></ul> 
-    <!-- <ul>
-      <li>HTML, CSS, JavaScript</li>
-      <li>GitHub & Git basics</li>
-      <li>Responsive design</li>
-      <li>Accessibility (WCAG basics)</li>
-      <li>Agile principles and collaborative workflow</li>
-      </ul> -->
+      <ul class="skills-list"></ul>
     </section>
 
     <section id="Projects">
       <h2>Projects</h2>
-      <ul> 
-        <!-- commenting <li> out => adding via .js
-        <li>Placeholder</li>
-        <li>Placeholder</li>
-        <li>Placeholder</li> -->
-      </ul>
+      <ul></ul>
     </section>
 
     <section id="Connect">
       <h2>Connect</h2>
-      <!-- Changing to using direct links, flexbox. Removing <ul> -->
-      <!-- <ul>
-        <li><a href="https://github.com/locirin" target="_blank" title="Visit my GitHub profile">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/placeholder" target="_blank" title="Connect with me on LinkedIn"
-            >LinkedIn</a></li>
-      </ul> -->
-      <!-- <div class="connect-links">
-        <a href="https://github.com/locirin" target="_blank" title="GitHub">GitHub</a>
-        <a href="https://www.linkedin.com/in/placeholder" target="_blank" title="LinkedIn">LinkedIn</a>
-      </div> -->
 
       <div class="connect-card">
         <div class="connect-links">
@@ -178,52 +110,50 @@
             <i class="fa-solid fa-envelope"></i> Email
           </a>
         </div>
-      </div>      
+      </div>
     </section>
-    
-    <!-- Week-12 changes: Leave a Message form -->
+
     <section id="leave-a-message">
       <h2>Leave a Message</h2>
 
-      <!-- <form name="leave_message"> Optimizing css to remove redundentform[name="leave_message"]-->
-        <form class="leave-message-form" name="leave_message">
+      <form class="leave-message-form" name="leave_message">
         <label for="usersName">Name:</label>
-        <!-- <br> -->
         <input
           type="text"
           name="usersName"
           required
-          placeholder="Enter your name">
-        <br>
-        
+          placeholder="Enter your name"
+        />
+        <br />
+
         <label for="usersEmail">Email:</label>
-        <!-- <br> -->
         <input
           type="email"
           name="usersEmail"
           required
-          placeholder="someone@example.com">
-        <br>
+          placeholder="someone@example.com"
+        />
+        <br />
 
         <label for="usersMessage">Message:</label>
-        <!-- <br> -->
         <textarea
           name="usersMessage"
           required
-          placeholder="Type your message here..."></textarea>
-        <br>
-        
+          placeholder="Type your message here..."
+        ></textarea>
+        <br />
+
         <button type="submit">Submit</button>
-       </form>           
+      </form>
     </section>
 
     <section id="messages">
-    <h2>Messages</h2>
-      <ul>
-      </ul>
+      <h2>Messages</h2>
+      <div class="message-tile">
+        <ul></ul>
+      </div>
     </section>
 
-    <!-- RE: FOOTER: see index.js - footer element is being dynamically created there. It is showing at the bottom of the page (body). See index.css for Footer's styling -->
     <script src="js/index.js"></script>
   </body>
 </html>
