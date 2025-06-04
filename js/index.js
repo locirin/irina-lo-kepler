@@ -1,9 +1,20 @@
-// Week 11
-
 //~~~~~~~~~~~~~~~~ Skills ~~~~~~~~~~~~~~~~//
 
-// Creating array of skills
-const skills = ["JavaScript", "HTML", "CSS", "GitHub", "Responsive Design"];
+// Creating array of skills to show
+const skills = [
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "GitHub",
+  "RWD",
+  "REST API",
+  "Fetch API",
+  "DOM Manipulation",
+  "Event Handling",
+  "Flexbox",
+  "Grid Layout",
+  "SQL",
+];
 
 // Declaring and selecting the section where id=Skills from DOM
 const skillsSection = document.querySelector("#Skills");
@@ -11,10 +22,11 @@ const skillsSection = document.querySelector("#Skills");
 // Declaring and selecting the ul element under Skills section
 const skillsList = skillsSection.querySelector("ul");
 
-// For loop for Skills array that adding every skill to the list
+// For loop for Skills array that adding each skill to the list
 for (let i = 0; i < skills.length; i++) {
   const skill = document.createElement("li"); // Creating a new <li> for each skill
-  skill.textContent = skills[i]; //text for the skill
+  skill.textContent = skills[i]; // Text content for each skill
+
   skillsList.appendChild(skill); // Appending <li> to <ul>
 }
 
@@ -34,7 +46,6 @@ messageForm.addEventListener("submit", function (event) {
   let usersEmail = event.target.usersEmail.value;
   let usersMessage = event.target.usersMessage.value;
 
-  // logging
   console.log("Name:", usersName);
   console.log("Email:", usersEmail);
   console.log("Message:", usersMessage);
@@ -91,12 +102,6 @@ messageForm.addEventListener("submit", function (event) {
     }
   });
 
-  // adding buttons to the msg
-  // newMessage.appendChild(removeButton);
-  // newMessage.appendChild(editButton);
-  // messageList.appendChild(newMessage);
-  // messageForm.reset();
-
   // creating div for buttons
   let controlButtons = document.createElement("div");
   controlButtons.classList.add("message-buttons");
@@ -115,6 +120,7 @@ messageForm.addEventListener("submit", function (event) {
 });
 
 //~~~~~~~~~~~~~~~~ Footer ~~~~~~~~~~~~~~~~//
+
 // Getting the current year
 const today = new Date();
 const thisYear = today.getFullYear();
@@ -155,54 +161,43 @@ fetch("https://api.github.com/users/locirin/repos") //making request to git
 
     projectList.innerHTML = ""; // emptying <li>
 
-    // for (let i = 0; i, repos.length; i++) { // shows all repos
-    // for (let i = 0; i < 2; i++) {  // shows only 2 repos
-
-    // show the most recent 2 repos
+    // show the most recent 3 repos
     let recentRepos = repos
       .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
       .slice(0, 3);
 
+    // assigning repos meaningful names
+    const repoNames = {
+      "weather-api-project": "Weather API App (Open-Meteo)",
+      "irina-lo-kepler": "Portfolio Site: Irina Lo",
+      "irinalo-debugging": "Debugging Game Project",
+      "my-ctd-app": "CTD Starter App",
+    };
+
     // show existing repos first
     for (let i = 0; i < recentRepos.length; i++) {
       let currentRepo = recentRepos[i];
-      let displayName = currentRepo.name;
 
-      // checking repos names and assigning meaningful names
-      if (currentRepo.name === "git-practice") {
-        displayName = "Git Practice Exercises";
-      } else if (currentRepo.name === "irina-lo-kepler") {
-        displayName = "Portfolio Site: Irina Lo";
-      }
+      let displayName = repoNames[currentRepo.name] || currentRepo.name;
 
       let project = document.createElement("li"); // adding a new element <li>
-
-      // // project.textContent = currentRepo.name; // repo's name
-      // project.textContent = displayName; // repo's meaningful name
-      // projectList.appendChild(project); // <li> under <ul>
-
-      // ====> replacing commented above to make the projects  clickable links
 
       let link = document.createElement("a"); // creating a new anchor to make it a clickagle link
 
       link.href = currentRepo.html_url; // setting link destination = repo's url
-      link.textContent = displayName; // renaming project to meaningfu name
+
+      link.innerHTML = `${displayName} <i class="fa-brands fa-github" style="margin-left: 0.5rem;"></i>`;
+
       link.target = "_blank"; // keeping portfolio page and open the link in new tab
 
       project.appendChild(link); // placing project links inside <li>
       projectList.appendChild(project); // adding all <li>s to <ul>
     }
-
-    // show placeholder after existing repos
-    // let placeholder = document.createElement("li");
-    // placeholder.textContent = "Placeholder for upcoming project";
-    // projectList.appendChild(placeholder);
   })
   .catch((error) => {
     console.error("An error occurred", error.message);
   });
 
-// Week-15 changes Optional
 //~~~~~~~~~~~~~~~~ Dark Mode Toggle ~~~~~~~~~~~~~~~~//
 
 // Selecting toggle button
@@ -212,9 +207,10 @@ const toggleButton = document.getElementById("dark-mode-toggle");
 toggleButton.addEventListener("click", function () {
   document.body.classList.toggle("dark-mode");
 
-  const theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+  const theme = document.body.classList.contains("dark-mode")
+    ? "dark"
+    : "light";
   localStorage.setItem("theme", theme);
-
 });
 
 // When page reloads => checking user saved selection
@@ -223,5 +219,4 @@ window.addEventListener("DOMContentLoaded", function () {
   if (savedTheme === "dark") {
     document.body.classList.add("dark-mode");
   }
-
 });
